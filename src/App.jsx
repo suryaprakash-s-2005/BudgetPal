@@ -113,8 +113,8 @@ function App() {
     <div className="container">
       <header className="app-header">
         <div className="app-logo">
-          <h1>WhyAmIBroke 💸</h1>
-          <p className="slogan">Because you bought things you didn't need... 🙃</p>
+          <h1><span className="gradient-text">BudgetPal</span> 🪙</h1>
+          <p className="slogan">Helping you look responsible, digitally. 😉📈💻</p>
         </div>
         <div className="header-controls">
           <div className="month-filter">
