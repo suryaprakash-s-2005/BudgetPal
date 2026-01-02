@@ -1,52 +1,52 @@
 :root {
-  /* Common Variables */
+
   --border-radius: 16px;
 
-  /* Dark Mode Colors (Default) */
+
   --primary-color: #818cf8;
-  /* Indigo 400 */
+
   --secondary-color: #c084fc;
-  /* Purple 400 */
+
   --bg-color: #0f172a;
-  /* Slate 900 */
+
   --card-bg: #1e293b;
-  /* Slate 800 */
+
   --text-color: #f8fafc;
-  /* Slate 50 */
+
   --text-muted: #94a3b8;
-  /* Slate 400 */
+
   --income-color: #34d399;
-  /* Emerald 400 */
+
   --expense-color: #f87171;
-  /* Red 400 */
+
   --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
   --border-color: #334155;
-  /* Slate 700 */
+
   --input-bg: #020617;
-  /* Slate 950 */
+
   --hover-bg: #334155;
 }
 
 [data-theme='light'] {
-  /* Light Mode Colors */
+
   --primary-color: #6366f1;
-  /* Indigo 500 */
+
   --secondary-color: #a855f7;
-  /* Purple 500 */
+
   --bg-color: #f8fafc;
-  /* Slate 50 */
+
   --card-bg: #ffffff;
   --text-color: #1e293b;
-  /* Slate 800 */
+
   --text-muted: #64748b;
-  /* Slate 500 */
+
   --income-color: #10b981;
-  /* Emerald 500 */
+
   --expense-color: #ef4444;
-  /* Red 500 */
+
   --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --border-color: #e2e8f0;
-  /* Slate 200 */
+
   --input-bg: #ffffff;
   --hover-bg: #f1f5f9;
 }
@@ -71,7 +71,7 @@ body {
   margin: 0 auto;
 }
 
-/* Header */
+
 .app-header {
   display: flex;
   justify-content: space-between;
@@ -141,7 +141,7 @@ h1 {
   cursor: pointer;
 }
 
-/* Layout */
+
 .dashboard-grid {
   display: flex;
   flex-direction: column;
@@ -171,7 +171,7 @@ h1 {
   gap: 24px;
 }
 
-/* Cards */
+
 .card {
   background: var(--card-bg);
   border-radius: var(--border-radius);
@@ -181,7 +181,7 @@ h1 {
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-/* Summary Cards */
+
 .summary-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -216,7 +216,7 @@ h1 {
   color: var(--expense-color);
 }
 
-/* Form */
+
 .transaction-form h3 {
   margin-bottom: 20px;
 }
@@ -257,7 +257,6 @@ select:focus {
   box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
 }
 
-/* Fix for date picker icon in dark mode */
 [data-theme='dark'] input[type="date"]::-webkit-calendar-picker-indicator {
   filter: invert(1);
   cursor: pointer;
@@ -321,7 +320,7 @@ select:focus {
 .btn-primary {
   background: var(--primary-color);
   color: #fff;
-  /* Always white for readability on primary color */
+  color: #fff;
 }
 
 .btn-secondary {
@@ -329,7 +328,7 @@ select:focus {
   color: var(--text-color);
 }
 
-/* List */
+
 .transaction-list h3 {
   margin-bottom: 16px;
 }
@@ -422,7 +421,7 @@ select:focus {
   color: var(--expense-color);
 }
 
-/* Charts */
+
 .chart-container {
   background: var(--card-bg);
   border-radius: var(--border-radius);
@@ -439,7 +438,7 @@ select:focus {
 }
 
 
-/* Animations */
+
 @keyframes slideIn {
   from {
     opacity: 0;
@@ -472,7 +471,7 @@ select:focus {
   transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 
-/* Ensure smooth theme transition */
+
 body,
 .card,
 input,
@@ -481,7 +480,7 @@ select,
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Responsive Adjustments */
+
 @media (max-width: 768px) {
   body {
     padding: 12px;
@@ -527,7 +526,6 @@ select,
   .chart-container {
     padding: 12px;
     height: auto;
-    /* Let content determine height to avoid overlap */
     min-height: 300px;
   }
 

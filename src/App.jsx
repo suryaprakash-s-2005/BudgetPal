@@ -12,12 +12,12 @@ import { Moon, Sun } from 'lucide-react';
 
 function App() {
   const [transactions, setTransactions] = useLocalStorage('transactions', []);
-  const [currentMonth, setCurrentMonth] = useState(new Date().toISOString().slice(0, 7)); // YYYY-MM
+  const [currentMonth, setCurrentMonth] = useState(new Date().toISOString().slice(0, 7));
   const [editingTransaction, setEditingTransaction] = useState(null);
   const [theme, setTheme] = useLocalStorage('theme', 'dark');
 
 
-  // Apply theme to document
+
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
@@ -28,7 +28,7 @@ function App() {
     setTheme((curr) => (curr === 'light' ? 'dark' : 'light'));
   }, [setTheme]);
 
-  // Handlers
+
   const addTransaction = useCallback((transaction) => {
     setTransactions((prev) => [transaction, ...prev]);
   }, [setTransactions]);
@@ -55,7 +55,7 @@ function App() {
     setEditingTransaction(null);
   }, []);
 
-  // Derived State
+
   const filteredTransactions = useMemo(() => {
     return transactions.filter((t) => t.date.startsWith(currentMonth));
   }, [transactions, currentMonth]);
@@ -81,8 +81,7 @@ function App() {
   }, [filteredTransactions]);
 
   const barChartData = useMemo(() => {
-    // Show last 6 months trend ideally
-    // Group all transactions by month
+
     const groups = transactions.reduce((acc, curr) => {
       const month = curr.date.slice(0, 7);
       if (!acc[month]) {
@@ -93,16 +92,16 @@ function App() {
       return acc;
     }, {});
 
-    // Sort by month
+
     const sortedMonths = Object.keys(groups).sort();
-    // Take last 6
+
     const last6 = sortedMonths.slice(-6);
     return last6.map(m => groups[m]);
   }, [transactions]);
 
   const availableMonths = useMemo(() => {
     const months = new Set(transactions.map((t) => t.date.slice(0, 7)));
-    // Ensure current month is always available
+
     months.add(new Date().toISOString().slice(0, 7));
     return Array.from(months).sort().reverse();
   }, [transactions]);
